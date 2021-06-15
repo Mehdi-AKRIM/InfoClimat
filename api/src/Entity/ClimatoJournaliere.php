@@ -10,7 +10,14 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *
  * @ORM\Table(name="climato_journaliere", indexes={@ORM\Index(name="id_station", columns={"id_station"}), @ORM\Index(name="ymd", columns={"annee", "mois", "jour"}), @ORM\Index(name="tn", columns={"tn"}), @ORM\Index(name="jour", columns={"jour"}), @ORM\Index(name="tx", columns={"tx"}), @ORM\Index(name="mois", columns={"mois"}), @ORM\Index(name="rr", columns={"rr"}), @ORM\Index(name="annee", columns={"annee"})})
  * @ORM\Entity
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={
+ *          "get"={}
+ *     },
+ *     itemOperations={
+ *          "get"={}
+ *     },
+ * )
  */
 class ClimatoJournaliere
 {

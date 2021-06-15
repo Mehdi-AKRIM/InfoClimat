@@ -10,7 +10,14 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *
  * @ORM\Table(name="historic_normales")
  * @ORM\Entity
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={
+ *          "get"={}
+ *     },
+ *     itemOperations={
+ *          "get"={}
+ *     },
+ * )
  */
 class HistoricNormales
 {

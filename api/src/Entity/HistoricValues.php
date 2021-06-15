@@ -10,7 +10,14 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *
  * @ORM\Table(name="historic_values", uniqueConstraints={@ORM\UniqueConstraint(name="doublons", columns={"date", "geoid", "type", "id_historic"})}, indexes={@ORM\Index(name="id_historic", columns={"id_historic", "dept"}), @ORM\Index(name="geoid", columns={"geoid"})})
  * @ORM\Entity
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={
+ *          "get"={}
+ *     },
+ *     itemOperations={
+ *          "get"={}
+ *     },
+ * )
  */
 class HistoricValues
 {

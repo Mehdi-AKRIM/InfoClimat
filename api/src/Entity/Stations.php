@@ -10,7 +10,14 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *
  * @ORM\Table(name="stations", uniqueConstraints={@ORM\UniqueConstraint(name="uniqueke", columns={"id"})}, indexes={@ORM\Index(name="pas_de_synop", columns={"pas_de_synop"}), @ORM\Index(name="climato_only", columns={"climato_only"}), @ORM\Index(name="latitude", columns={"latitude"}), @ORM\Index(name="pays", columns={"pays"}), @ORM\Index(name="base_climato", columns={"base_climato"}), @ORM\Index(name="longitude", columns={"longitude"}), @ORM\Index(name="station_reference", columns={"station_reference"}), @ORM\Index(name="libelle", columns={"libelle"}), @ORM\Index(name="departement", columns={"departement"})})
  * @ORM\Entity
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={
+ *          "get"={}
+ *     },
+ *     itemOperations={
+ *          "get"={}
+ *     },
+ * )
  */
 class Stations
 {

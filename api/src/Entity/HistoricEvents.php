@@ -10,7 +10,14 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *
  * @ORM\Table(name="historic_events", indexes={@ORM\Index(name="gen_cartes", columns={"gen_cartes"}), @ORM\Index(name="importance", columns={"importance", "type"}), @ORM\Index(name="hits", columns={"hits"}), @ORM\Index(name="recherche", columns={"nom", "description", "short_desc"}), @ORM\Index(name="nom", columns={"nom"})})
  * @ORM\Entity
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={
+ *          "get"={}
+ *     },
+ *     itemOperations={
+ *          "get"={}
+ *     },
+ * )
  */
 class HistoricEvents
 {
