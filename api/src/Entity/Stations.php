@@ -149,5 +149,226 @@ class Stations
      */
     private $lastData;
 
+    public function getUniqueid(): ?string
+    {
+        return $this->uniqueid;
+    }
+
+    public function getId(): ?string
+    {
+        return $this->id;
+    }
+
+    public function setId(string $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    public function getGenre(): ?string
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(string $genre): self
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
+    public function getLibelle(): ?string
+    {
+        return $this->libelle;
+    }
+
+    public function setLibelle(string $libelle): self
+    {
+        $this->libelle = $libelle;
+
+        return $this;
+    }
+
+    public function getDepartement(): ?string
+    {
+        return $this->departement;
+    }
+
+    public function setDepartement(string $departement): self
+    {
+        $this->departement = $departement;
+
+        return $this;
+    }
+
+    public function getPays(): ?string
+    {
+        return $this->pays;
+    }
+
+    public function setPays(string $pays): self
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    public function getLatitude(): ?float
+    {
+        return $this->latitude;
+    }
+
+    public function setLatitude(float $latitude): self
+    {
+        $this->latitude = $latitude;
+
+        return $this;
+    }
+
+    public function getLongitude(): ?float
+    {
+        return $this->longitude;
+    }
+
+    public function setLongitude(float $longitude): self
+    {
+        $this->longitude = $longitude;
+
+        return $this;
+    }
+
+    public function getAltitude(): ?int
+    {
+        return $this->altitude;
+    }
+
+    public function setAltitude(int $altitude): self
+    {
+        $this->altitude = $altitude;
+
+        return $this;
+    }
+
+    public function getOrientation(): ?bool
+    {
+        return $this->orientation;
+    }
+
+    public function setOrientation(bool $orientation): self
+    {
+        $this->orientation = $orientation;
+
+        return $this;
+    }
+
+    public function getStationReference(): ?string
+    {
+        return $this->stationReference;
+    }
+
+    public function setStationReference(string $stationReference): self
+    {
+        $this->stationReference = $stationReference;
+
+        return $this;
+    }
+
+    public function getPasDeSynop(): ?int
+    {
+        return $this->pasDeSynop;
+    }
+
+    public function setPasDeSynop(int $pasDeSynop): self
+    {
+        $this->pasDeSynop = $pasDeSynop;
+
+        return $this;
+    }
+
+    public function getClimatoOnly(): ?bool
+    {
+        return $this->climatoOnly;
+    }
+
+    public function setClimatoOnly(bool $climatoOnly): self
+    {
+        $this->climatoOnly = $climatoOnly;
+
+        return $this;
+    }
+
+    public function getDhMinClimato(): ?\DateTimeInterface
+    {
+        return $this->dhMinClimato;
+    }
+
+    public function setDhMinClimato(?\DateTimeInterface $dhMinClimato): self
+    {
+        $this->dhMinClimato = $dhMinClimato;
+
+        return $this;
+    }
+
+    public function getDhMinLive(): ?\DateTimeInterface
+    {
+        return $this->dhMinLive;
+    }
+
+    public function setDhMinLive(?\DateTimeInterface $dhMinLive): self
+    {
+        $this->dhMinLive = $dhMinLive;
+
+        return $this;
+    }
+
+    public function getDhOuverture(): ?\DateTimeInterface
+    {
+        return $this->dhOuverture;
+    }
+
+    public function setDhOuverture(?\DateTimeInterface $dhOuverture): self
+    {
+        $this->dhOuverture = $dhOuverture;
+
+        return $this;
+    }
+
+    public function getBaseClimato(): ?bool
+    {
+        return $this->baseClimato;
+    }
+
+    public function setBaseClimato(bool $baseClimato): self
+    {
+        $this->baseClimato = $baseClimato;
+
+        return $this;
+    }
+
+    public function getLastReport(): ?\DateTimeInterface
+    {
+        return $this->lastReport;
+    }
+
+    public function setLastReport(\DateTimeInterface $lastReport): self
+    {
+        $this->lastReport = $lastReport;
+
+        return $this;
+    }
+
+    public function getLastData(): ?string
+    {
+        return $this->lastData;
+    }
+
+    public function setLastData(string $lastData): self
+    {
+        $this->lastData = $lastData;
+
+        return $this;
+    }
+
 
 }

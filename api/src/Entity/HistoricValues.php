@@ -100,5 +100,142 @@ class HistoricValues
      */
     private $estRecordDpt = '0';
 
+    public function getId(): ?string
+    {
+        return $this->id;
+    }
+
+    public function getIdHistoric(): ?int
+    {
+        return $this->idHistoric;
+    }
+
+    public function setIdHistoric(int $idHistoric): self
+    {
+        $this->idHistoric = $idHistoric;
+
+        return $this;
+    }
+
+    public function getLieu(): ?string
+    {
+        return $this->lieu;
+    }
+
+    public function setLieu(string $lieu): self
+    {
+        $this->lieu = $lieu;
+
+        return $this;
+    }
+
+    public function getGeoid(): ?int
+    {
+        return $this->geoid;
+    }
+
+    public function setGeoid(int $geoid): self
+    {
+        $this->geoid = $geoid;
+
+        return $this;
+    }
+
+    public function getDept(): ?string
+    {
+        return $this->dept;
+    }
+
+    public function setDept(string $dept): self
+    {
+        $this->dept = $dept;
+
+        return $this;
+    }
+
+    public function getPays(): ?string
+    {
+        return $this->pays;
+    }
+
+    public function setPays(string $pays): self
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    public function getValeur(): ?float
+    {
+        return $this->valeur;
+    }
+
+    public function setValeur(float $valeur): self
+    {
+        $this->valeur = $valeur;
+
+        return $this;
+    }
+
+    public function getType(): ?bool
+    {
+        return $this->type;
+    }
+
+    public function setType(bool $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    public function getCommentaire(): ?string
+    {
+        return $this->commentaire;
+    }
+
+    public function setCommentaire(string $commentaire): self
+    {
+        $this->commentaire = $commentaire;
+
+        return $this;
+    }
+
+    public function getEstRecord(): ?bool
+    {
+        return $this->estRecord;
+    }
+
+    public function setEstRecord(bool $estRecord): self
+    {
+        $this->estRecord = $estRecord;
+
+        return $this;
+    }
+
+    public function getEstRecordDpt(): ?bool
+    {
+        return $this->estRecordDpt;
+    }
+
+    public function setEstRecordDpt(bool $estRecordDpt): self
+    {
+        $this->estRecordDpt = $estRecordDpt;
+
+        return $this;
+    }
+
 
 }

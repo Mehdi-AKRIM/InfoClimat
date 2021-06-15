@@ -88,5 +88,111 @@ class HistoricNormales
      */
     private $wmoRef;
 
+    public function getGeoid(): ?string
+    {
+        return $this->geoid;
+    }
+
+    public function getMois(): ?int
+    {
+        return $this->mois;
+    }
+
+    public function getTx(): ?float
+    {
+        return $this->tx;
+    }
+
+    public function setTx(float $tx): self
+    {
+        $this->tx = $tx;
+
+        return $this;
+    }
+
+    public function getTn(): ?float
+    {
+        return $this->tn;
+    }
+
+    public function setTn(float $tn): self
+    {
+        $this->tn = $tn;
+
+        return $this;
+    }
+
+    public function getPrecip(): ?float
+    {
+        return $this->precip;
+    }
+
+    public function setPrecip(float $precip): self
+    {
+        $this->precip = $precip;
+
+        return $this;
+    }
+
+    public function getAltitudeRef(): ?float
+    {
+        return $this->altitudeRef;
+    }
+
+    public function setAltitudeRef(float $altitudeRef): self
+    {
+        $this->altitudeRef = $altitudeRef;
+
+        return $this;
+    }
+
+    public function getNomRef(): ?string
+    {
+        return $this->nomRef;
+    }
+
+    public function setNomRef(string $nomRef): self
+    {
+        $this->nomRef = $nomRef;
+
+        return $this;
+    }
+
+    public function getDeptRef(): ?string
+    {
+        return $this->deptRef;
+    }
+
+    public function setDeptRef(string $deptRef): self
+    {
+        $this->deptRef = $deptRef;
+
+        return $this;
+    }
+
+    public function getDistance(): ?float
+    {
+        return $this->distance;
+    }
+
+    public function setDistance(float $distance): self
+    {
+        $this->distance = $distance;
+
+        return $this;
+    }
+
+    public function getWmoRef(): ?string
+    {
+        return $this->wmoRef;
+    }
+
+    public function setWmoRef(string $wmoRef): self
+    {
+        $this->wmoRef = $wmoRef;
+
+        return $this;
+    }
+
 
 }

@@ -78,5 +78,73 @@ class ClimatoJournaliere
      */
     private $ens = 'NULL';
 
+    public function getIdStation(): ?string
+    {
+        return $this->idStation;
+    }
+
+    public function getJour(): ?bool
+    {
+        return $this->jour;
+    }
+
+    public function getMois(): ?bool
+    {
+        return $this->mois;
+    }
+
+    public function getAnnee(): ?int
+    {
+        return $this->annee;
+    }
+
+    public function getTn(): ?float
+    {
+        return $this->tn;
+    }
+
+    public function setTn(?float $tn): self
+    {
+        $this->tn = $tn;
+
+        return $this;
+    }
+
+    public function getTx(): ?float
+    {
+        return $this->tx;
+    }
+
+    public function setTx(?float $tx): self
+    {
+        $this->tx = $tx;
+
+        return $this;
+    }
+
+    public function getRr(): ?float
+    {
+        return $this->rr;
+    }
+
+    public function setRr(?float $rr): self
+    {
+        $this->rr = $rr;
+
+        return $this;
+    }
+
+    public function getEns(): ?float
+    {
+        return $this->ens;
+    }
+
+    public function setEns(?float $ens): self
+    {
+        $this->ens = $ens;
+
+        return $this;
+    }
+
 
 }
