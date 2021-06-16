@@ -4,6 +4,10 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiFilter;
+use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * HistoricEvents
@@ -11,6 +15,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
  * @ORM\Table(name="historic_events", indexes={@ORM\Index(name="gen_cartes", columns={"gen_cartes"}), @ORM\Index(name="importance", columns={"importance", "type"}), @ORM\Index(name="hits", columns={"hits"}), @ORM\Index(name="recherche", columns={"nom", "description", "short_desc"}), @ORM\Index(name="nom", columns={"nom"})})
  * @ORM\Entity
  * @ApiResource(
+ *  attributes={
+ *      "pagination_enabled"=true,
+ *      "pagination_items_per_page"=20,
+ *      "order": {"nom":"desc"}
+ *  },
  *     collectionOperations={
  *          "get"={}
  *     },
@@ -18,6 +27,8 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *          "get"={}
  *     },
  * )
+ * @ApiFilter(SearchFilter::class)
+ * @ApiFilter(OrderFilter::class, properties={"localisation","typeCyclone"})
  */
 class HistoricEvents
 {

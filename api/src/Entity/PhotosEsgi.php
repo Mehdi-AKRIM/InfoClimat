@@ -4,6 +4,10 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiFilter;
+use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * PhotosEsgi
@@ -11,6 +15,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
  * @ORM\Table(name="photos_esgi", indexes={@ORM\Index(name="departement", columns={"departement"}), @ORM\Index(name="id_compte", columns={"id_compte"}), @ORM\Index(name="est_argentic", columns={"est_argentic"}), @ORM\Index(name="pays", columns={"pays"}), @ORM\Index(name="dh_publication", columns={"dh_publication"}), @ORM\Index(name="est_mobile", columns={"est_mobile"}), @ORM\Index(name="id_geonames", columns={"id_geonames"}), @ORM\Index(name="dh_prise", columns={"dh_prise"}), @ORM\Index(name="lieu", columns={"lieu", "titre", "description", "exif"}), @ORM\Index(name="statut", columns={"statut"})})
  * @ORM\Entity
  * @ApiResource(
+ *  attributes={
+ *      "pagination_enabled"=true,
+ *      "pagination_items_per_page"=20,
+ *      "order": {"lieu":"desc"}
+ *  },
  *     collectionOperations={
  *          "get"={}
  *     },
@@ -18,6 +27,8 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *          "get"={}
  *     },
  * )
+ * @ApiFilter(SearchFilter::class)
+ * @ApiFilter(OrderFilter::class, properties={"lieu"})
  */
 class PhotosEsgi
 {

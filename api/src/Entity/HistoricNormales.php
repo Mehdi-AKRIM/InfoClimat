@@ -4,6 +4,10 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Core\Annotation\ApiFilter;
 
 /**
  * HistoricNormales
@@ -11,6 +15,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
  * @ORM\Table(name="historic_normales")
  * @ORM\Entity
  * @ApiResource(
+ *  attributes={
+ *      "pagination_enabled"=true,
+ *      "pagination_items_per_page"=20,
+ *      "order": {"tn":"desc"}
+ *  },
  *     collectionOperations={
  *          "get"={}
  *     },
@@ -18,6 +27,8 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *          "get"={}
  *     },
  * )
+ * @ApiFilter(SearchFilter::class)
+ * @ApiFilter(OrderFilter::class, properties={"tn"})
  */
 class HistoricNormales
 {

@@ -4,6 +4,10 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiFilter;
+use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * HistoricValues
@@ -11,6 +15,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
  * @ORM\Table(name="historic_values", uniqueConstraints={@ORM\UniqueConstraint(name="doublons", columns={"date", "geoid", "type", "id_historic"})}, indexes={@ORM\Index(name="id_historic", columns={"id_historic", "dept"}), @ORM\Index(name="geoid", columns={"geoid"})})
  * @ORM\Entity
  * @ApiResource(
+ *  attributes={
+ *      "pagination_enabled"=true,
+ *      "pagination_items_per_page"=20,
+ *      "order": {"pays":"desc"}
+ *  },
  *     collectionOperations={
  *          "get"={}
  *     },
@@ -18,6 +27,8 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *          "get"={}
  *     },
  * )
+ * @ApiFilter(SearchFilter::class)
+ * @ApiFilter(OrderFilter::class, properties={"pays"})
  */
 class HistoricValues
 {

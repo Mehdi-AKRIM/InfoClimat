@@ -4,6 +4,10 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiFilter;
+use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * Stations
@@ -11,6 +15,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
  * @ORM\Table(name="stations", uniqueConstraints={@ORM\UniqueConstraint(name="uniqueke", columns={"id"})}, indexes={@ORM\Index(name="pas_de_synop", columns={"pas_de_synop"}), @ORM\Index(name="climato_only", columns={"climato_only"}), @ORM\Index(name="latitude", columns={"latitude"}), @ORM\Index(name="pays", columns={"pays"}), @ORM\Index(name="base_climato", columns={"base_climato"}), @ORM\Index(name="longitude", columns={"longitude"}), @ORM\Index(name="station_reference", columns={"station_reference"}), @ORM\Index(name="libelle", columns={"libelle"}), @ORM\Index(name="departement", columns={"departement"})})
  * @ORM\Entity
  * @ApiResource(
+ *  attributes={
+ *      "pagination_enabled"=true,
+ *      "pagination_items_per_page"=20,
+ *      "order": {"departement":"desc"}
+ *  },
  *     collectionOperations={
  *          "get"={}
  *     },
@@ -18,6 +27,8 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *          "get"={}
  *     },
  * )
+ * @ApiFilter(SearchFilter::class)
+ * @ApiFilter(OrderFilter::class, properties={"departement"})
  */
 class Stations
 {

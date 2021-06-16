@@ -4,6 +4,10 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\Collection;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Core\Annotation\ApiFilter;
 
 /**
  * ClimatoJournaliere
@@ -11,6 +15,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
  * @ORM\Table(name="climato_journaliere", indexes={@ORM\Index(name="id_station", columns={"id_station"}), @ORM\Index(name="ymd", columns={"annee", "mois", "jour"}), @ORM\Index(name="tn", columns={"tn"}), @ORM\Index(name="jour", columns={"jour"}), @ORM\Index(name="tx", columns={"tx"}), @ORM\Index(name="mois", columns={"mois"}), @ORM\Index(name="rr", columns={"rr"}), @ORM\Index(name="annee", columns={"annee"})})
  * @ORM\Entity
  * @ApiResource(
+ *  attributes={
+ *      "pagination_enabled"=true,
+ *      "pagination_items_per_page"=20,
+ *      "order": {"tn":"desc"}
+ *  },
  *     collectionOperations={
  *          "get"={}
  *     },
@@ -18,6 +27,8 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *          "get"={}
  *     },
  * )
+ * @ApiFilter(SearchFilter::class)
+ * @ApiFilter(OrderFilter::class, properties={"tn"})
  */
 class ClimatoJournaliere
 {
