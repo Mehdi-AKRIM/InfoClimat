@@ -42,18 +42,18 @@ class ClimatoJournaliere
     private $idStation;
 
     /**
-     * @var bool
+     * @var int
      *
-     * @ORM\Column(name="jour", type="boolean", nullable=false)
+     * @ORM\Column(name="jour", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
     private $jour;
 
     /**
-     * @var bool
+     * @var int
      *
-     * @ORM\Column(name="mois", type="boolean", nullable=false)
+     * @ORM\Column(name="mois", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
@@ -101,12 +101,12 @@ class ClimatoJournaliere
         return $this->idStation;
     }
 
-    public function getJour(): ?bool
+    public function getJour(): ?int
     {
         return $this->jour;
     }
 
-    public function getMois(): ?bool
+    public function getMois(): ?int
     {
         return $this->mois;
     }
