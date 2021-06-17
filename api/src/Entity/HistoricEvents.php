@@ -56,9 +56,9 @@ class HistoricEvents
     private $localisation;
 
     /**
-     * @var bool
+     * @var integer
      *
-     * @ORM\Column(name="importance", type="boolean", nullable=false)
+     * @ORM\Column(name="importance", type="integer", nullable=false)
      */
     private $importance;
 
@@ -217,7 +217,7 @@ class HistoricEvents
         return $this;
     }
 
-    public function getImportance(): ?bool
+    public function getImportance(): ?int
     {
         return $this->importance;
     }
